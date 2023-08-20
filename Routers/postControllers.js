@@ -76,7 +76,9 @@ router.put("/addcomment/:postid",async(req,res)=>{
             $push:{
                 comments:{
                     userId:req.body.userId,
-                    comment:req.body.comment
+                    comment:req.body.comment,
+                    userImg:req.body.userImg,
+                    userName:req.body.userName
                 }
             }
         })
