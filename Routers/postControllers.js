@@ -69,23 +69,23 @@ router.put("/:id/like",async(req,res)=>{
     }
 })
 
-router.put("/addcomment/:postid",async(req,res)=>{
-    try {
-        const post=await PostModel.findById(req.params.postid)
-        await post.updateOne({
-            $push:{
-                comments:{
-                    userId:req.body.userId,
-                    comment:req.body.comment
-                }
-            }
-        })
-        res.status(200).json("updated")
+// router.put("/addcomment/:postid",async(req,res)=>{
+//     try {
+//         const post=await PostModel.findById(req.params.postid)
+//         await post.updateOne({
+//             $push:{
+//                 comments:{
+//                     userId:req.body.userId,
+//                     comment:req.body.comment
+//                 }
+//             }
+//         })
+//         res.status(200).json("updated")
 
-    } catch (error) {
-        res.status(500).json({message:"something went wrong"})
-    }
-})
+//     } catch (error) {
+//         res.status(500).json({message:"something went wrong"})
+//     }
+// })
 
 //get post
 
