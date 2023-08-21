@@ -15,8 +15,10 @@ router.post("/",async(req,res)=>{
             })
             await newConversation.save()
             res.status(200).json(newConversation)
+        }else{
+            res.status(200).json(find)
         }
-        res.status(200).json(find)
+
     } catch (error) {
         console.log(error)
         res.status(500).json({message:"something went wrong"})
